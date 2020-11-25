@@ -83,11 +83,12 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random());
 let chosenCards = [];
 let chosenCardsId = [];
+const btn = document.querySelector(".btn");
+const table = document.querySelector(".table");
 function checkMatch() {
   const cards = document.querySelectorAll(".card");
   const firstClickId = chosenCardsId[0];
   const secondClickId = chosenCardsId[1];
-  console.log(firstClickId, secondClickId);
   if (chosenCards[0] === chosenCards[1] && firstClickId !== secondClickId) {
     cards[firstClickId].classList.add("match");
     cards[secondClickId].classList.add("match");
@@ -98,24 +99,18 @@ function checkMatch() {
   chosenCards = [];
   chosenCardsId = [];
 }
-
 function flipCard() {
   const cardId = this.getAttribute("data-id");
   chosenCards.push(cardArray[cardId].name);
   chosenCardsId.push(cardId);
   this.setAttribute("src", `${cardArray[cardId].img}`);
-
   if (chosenCardsId.length === 2) {
     setTimeout(checkMatch, 300);
   }
 }
-const btn = document.querySelector(".btn");
-
-const table = document.querySelector(".table");
 const createBoard = () => {
   for (let i = 0; i < cardArray.length; i++) {
     const card = document.createElement("img");
-
     card.setAttribute("src", "src/background.png");
     card.setAttribute("data-id", i);
     card.classList.add("card");
