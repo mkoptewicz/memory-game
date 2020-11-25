@@ -23,10 +23,11 @@ img {
 }
 .card {
   flex-basis: 25%;
-  border: 1px solid red;
+  border: 1px solid black;
 }
 .card.match {
   filter: grayscale(100%);
+  transition: .2s;
 }
 .btn {
   display: block;
