@@ -65,4 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "src/pam.jpg",
     },
   ];
+
+  const table = document.querySelector(".table");
+  const createBoard = () => {
+    for (let i = 0; i < cardArray.length; i++) {
+      const card = document.createElement("img");
+      card.setAttribute("src", "src/background.png");
+      card.setAttribute("data-id", i);
+      card.classList.add('card')
+      table.appendChild(card);
+    }
+  };
+  createBoard();
 });
