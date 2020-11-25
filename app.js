@@ -64,6 +64,7 @@ const cardArray = [
     img: "src/pam.jpg",
   },
 ];
+cardArray.sort(() => 0.5 - Math.random());
 let chosenCards = [];
 let chosenCardsId = [];
 function checkMatch() {
