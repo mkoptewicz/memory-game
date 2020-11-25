@@ -6,26 +6,25 @@ body {
   padding: 0;
 }
 h3 {
- text-align: center;
+  text-align: center;
 }
 .table {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   width: 800px;
   height: 800px;
   margin: 50px auto;
-  
 }
 img {
- max-width: 200px;
-max-height: 200px;
- object-fit: cover;
- object-position: top;
- 
- 
- 
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: top;
 }
 .card {
- flex-basis: 25%;
- border: 1px solid red;
+  flex-basis: 25%;
+  border: 1px solid red;
+}
+.card.match {
+  filter: grayscale(100%);
 }
