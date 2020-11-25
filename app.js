@@ -87,7 +87,8 @@ function checkMatch() {
   const cards = document.querySelectorAll(".card");
   const firstClickId = chosenCardsId[0];
   const secondClickId = chosenCardsId[1];
-  if (chosenCards[0] === chosenCards[1]) {
+  console.log(firstClickId, secondClickId);
+  if (chosenCards[0] === chosenCards[1] && firstClickId !== secondClickId) {
     cards[firstClickId].classList.add("match");
     cards[secondClickId].classList.add("match");
   } else {
