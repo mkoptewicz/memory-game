@@ -64,35 +64,43 @@ const cardArray = [
     img: "src/pam.jpg",
   },
 ];
-const chosenCards = [];
-const chosenCardsId = []
+let chosenCards = [];
+let chosenCardsId = [];
 function checkMatch() {
- console.log('ok');
+  const cards = document.querySelectorAll(".card");
+  const firstClickId = chosenCardsId[0];
+  const secondClickId = chosenCardsId[1];
+  if (chosenCards[0] === chosenCards[1]) {
+    cards[firstClickId].classList.add("match");
+    cards[secondClickId].classList.add("match");
+  } else {
+    cards[firstClickId].setAttribute("src", "src/background.png");
+    cards[secondClickId].setAttribute("src", "src/background.png");
+  }
+  chosenCards = [];
+  chosenCardsId = [];
 }
 
 function flipCard() {
- const cardId = this.getAttribute("data-id");
- chosenCards.push(cardArray[cardId])
- chosenCardsId.push(cardId)
- this.setAttribute('src', `${cardArray[cardId].img}`);
- if(chosenCardsId.length === 2) {
-  checkMatch()
- }
-};
-
+  const cardId = this.getAttribute("data-id");
+  chosenCards.push(cardArray[cardId].name);
+  chosenCardsId.push(cardId);
+  this.setAttribute("src", `${cardArray[cardId].img}`);
+  if (chosenCardsId.length === 2) {
+    setTimeout(checkMatch, 500);
+  }
+}
 
 const table = document.querySelector(".table");
 const createBoard = () => {
   for (let i = 0; i < cardArray.length; i++) {
     const card = document.createElement("img");
-    
+
     card.setAttribute("src", "src/background.png");
     card.setAttribute("data-id", i);
     card.classList.add("card");
-    card.addEventListener('click', flipCard)
+    card.addEventListener("click", flipCard);
     table.appendChild(card);
-    
   }
 };
 createBoard();
-
