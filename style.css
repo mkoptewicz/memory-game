@@ -28,3 +28,10 @@ img {
 .card.match {
   filter: grayscale(100%);
 }
+.btn {
+  display: block;
+  width: 150px;
+  padding: 10px 5px;
+  font-size: 24px;
+  margin: 0 auto;
+}
