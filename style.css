@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+ text-align: center;
+}
+.table {
+ display: flex;
+ flex-wrap: wrap;
+  width: 60%;
+  height: 800px;
+  margin: 50px auto;
+  
+}
+.card {
+ flex-basis: 25%;
+ border: 1px solid red;
+}
