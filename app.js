@@ -2,66 +2,82 @@ const cardArray = [
   {
     name: "andy",
     img: "src/andy.jpg",
+    num: 1,
   },
   {
     name: "andy",
     img: "src/andy.jpg",
+    num: 2,
   },
   {
     name: "angela",
     img: "src/angela.jpg",
+    num: 1,
   },
   {
     name: "angela",
     img: "src/angela.jpg",
+    num: 2,
   },
   {
     name: "dwight",
     img: "src/dwight.jpg",
+    num: 1,
   },
   {
     name: "dwight",
     img: "src/dwight.jpg",
+    num: 2,
   },
   {
     name: "jim",
     img: "src/jim.jpg",
+    num: 1,
   },
   {
     name: "jim",
     img: "src/jim.jpg",
+    num: 2,
   },
   {
     name: "karen",
     img: "src/karen.jpg",
+    num: 1,
   },
   {
     name: "karen",
     img: "src/karen.jpg",
+    num: 2,
   },
   {
     name: "michael",
     img: "src/michael.jpg",
+    num: 1,
   },
   {
     name: "michael",
     img: "src/michael.jpg",
+    num: 2,
   },
   {
     name: "oscar",
     img: "src/oscar.jpg",
+    num: 1,
   },
   {
     name: "oscar",
     img: "src/oscar.jpg",
+    num: 2,
   },
   {
     name: "pam",
     img: "src/pam.jpg",
+    num: 1,
   },
   {
     name: "pam",
     img: "src/pam.jpg",
+    num: 2,
   },
 ];
 cardArray.sort(() => 0.5 - Math.random());
@@ -87,10 +103,12 @@ function flipCard() {
   chosenCards.push(cardArray[cardId].name);
   chosenCardsId.push(cardId);
   this.setAttribute("src", `${cardArray[cardId].img}`);
+
   if (chosenCardsId.length === 2) {
-    setTimeout(checkMatch, 500);
+    setTimeout(checkMatch, 300);
   }
 }
+const btn = document.querySelector(".btn");
 
 const table = document.querySelector(".table");
 const createBoard = () => {
@@ -104,4 +122,8 @@ const createBoard = () => {
     table.appendChild(card);
   }
 };
+btn.addEventListener("click", () => {
+  location.reload();
+  return false;
+});
 createBoard();
